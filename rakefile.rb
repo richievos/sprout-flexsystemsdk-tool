@@ -35,20 +35,7 @@ begin
 
     gemspec.platform            = Gem::Platform::RUBY
     gemspec.has_rdoc            = false
-    # s.summary             = SUMMARY
-    # s.description         = DESCRIPTION
-    # s.name                = NAME
-
-    # s.version             = GEM_VERSION
-    # s.require_path        = 'lib'
-    # s.bindir              = 'bin'
-
-    # s.author              = AUTHOR
-    # s.email               = EMAIL
-    # s.homepage            = HOMEPAGE
-    # s.rubyforge_project   = PROJECT
-    # s.files               = PKG_LIST.to_a
-    # s.executables         = []
+    gemspec.executables         = []
     # s.default_executable  = ''
   end
 rescue LoadError
