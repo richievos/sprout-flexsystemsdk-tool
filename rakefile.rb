@@ -5,9 +5,9 @@ NAME                    = 'sprout-flexsystemsdk-tool'
 SUMMARY                 = 'Adobe Flex 3 SDK including mxmlc, compc, asdoc and fdb'
 AUTHOR                  = 'Adobe, Inc.'
 EMAIL                   = 'jerry.vos@gmail.com'
-HOMEPAGE                = 'http://github.com/jerryvos/sprouts-flexsystemsdk-tool'
+HOMEPAGE                = 'http://github.com/jerryvos/sprout-flexsystemsdk-tool'
 DESCRIPTION             = "A sprout tool for interacting with your local sdk"
-HOMEPATH                = "http://github.com/jerryvos/sprouts-flexsystemsdk-tool"
+HOMEPATH                = "http://github.com/jerryvos/sprout-flexsystemsdk-tool"
 RELEASE_TYPES           = ["gem"]
 PKG_LIST                = FileList['[a-zA-Z]*',
                                   'bin/**/*',

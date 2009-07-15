@@ -19,10 +19,9 @@ Gem::Specification.new do |s|
      "bin/fdb",
      "bin/mxmlc",
      "rakefile.rb",
-     "sprout.spec",
-     "sprouts-flexsystemsdk-tool.gemspec"
+     "sprout.spec"
   ]
-  s.homepage = %q{http://github.com/jerryvos/sprouts-flexsystemsdk-tool}
+  s.homepage = %q{http://github.com/jerryvos/sprout-flexsystemsdk-tool}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.4}
