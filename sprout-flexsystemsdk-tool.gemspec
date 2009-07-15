@@ -10,8 +10,12 @@ Gem::Specification.new do |s|
   s.description = %q{A sprout tool for interacting with your local sdk}
   s.email = %q{jerry.vos@gmail.com}
   s.executables = ["adl", "adt", "asdoc", "compc", "fdb", "mxmlc"]
+  s.extra_rdoc_files = [
+    "README.markdown"
+  ]
   s.files = [
-    "VERSION",
+    "README.markdown",
+     "VERSION",
      "bin/adl",
      "bin/adt",
      "bin/asdoc",
@@ -19,6 +23,7 @@ Gem::Specification.new do |s|
      "bin/fdb",
      "bin/mxmlc",
      "rakefile.rb",
+     "sprout-flexsystemsdk-tool.gemspec",
      "sprout.spec"
   ]
   s.homepage = %q{http://github.com/jerryvos/sprout-flexsystemsdk-tool}
