@@ -1,36 +1,12 @@
 require 'jeweler'
 
-# PROJECT                 = 'sprout'
-NAME                    = 'sprout-flexsystemsdk-tool'
-SUMMARY                 = 'Adobe Flex 3 SDK including mxmlc, compc, asdoc and fdb'
-AUTHOR                  = 'Adobe, Inc.'
-EMAIL                   = 'jerry.vos@gmail.com'
-HOMEPAGE                = 'http://github.com/jerryvos/sprout-flexsystemsdk-tool'
-DESCRIPTION             = "A sprout tool for interacting with your local sdk"
-HOMEPATH                = "http://github.com/jerryvos/sprout-flexsystemsdk-tool"
-RELEASE_TYPES           = ["gem"]
-PKG_LIST                = FileList['[a-zA-Z]*',
-                                  'bin/**/*',
-                                  'lib/**/*'
-                                  ]
-
-PKG_LIST.exclude('.svn')
-PKG_LIST.exclude('artifacts')
-PKG_LIST.each do |file|
-  task :package => file
-end
-
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gemspec|
-    gemspec.name = NAME
-    gemspec.summary = SUMMARY
-    gemspec.description = DESCRIPTION
-    gemspec.email = EMAIL
-    gemspec.homepage = HOMEPAGE
-    gemspec.description = DESCRIPTION
-    gemspec.authors = [AUTHOR]
-    gemspec.files = PKG_LIST.to_a
+    gemspec.name = 'sprout-flexsystemsdk-tool'
+    gemspec.summary = "A sprout tool for interacting with your local sdk"
+    gemspec.email = 'jerry.vos@gmail.com'
+    gemspec.homepage = 'http://github.com/jerryvos/sprout-flexsystemsdk-tool'
     gemspec.add_dependency('sprout', '>= 0.7.1')
 
     gemspec.platform            = Gem::Platform::RUBY
@@ -50,6 +26,14 @@ namespace :bin do
       File.open(File.join(File.dirname(__FILE__), 'bin', command), 'w') do |file|
         file.write <<-EOF
 #!/usr/bin/env ruby
+# Append $FLEX_SDK/bin to the PATH if it isn't already
+if ENV['FLEX_SDK']
+  path_separator = RUBY_PLATFORM =~ /(mingw)|win/ ? ";" : ":"
+
+  flex_sdk_bin = File.join(ENV['FLEX_SDK'], bin)
+
+  ENV['PATH'] += "#{path_separator}#{flex_sdk_bin}" unless ENV['PATH'].include?(flex_sdk_bin)
+end
 exec("#{command}", *ARGV)
 EOF
       end
